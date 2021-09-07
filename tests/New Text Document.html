@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Image to use:</p>
+<img id="scream" src="a.jpg" alt="The Scream" style="display: none">
+
+<div align="center">
+<canvas id="myCanvas" style="border:1px solid #d3d3d3; height:100%">
+Your browser does not support the HTML5 canvas tag.
+</canvas>
+</div>
+<script>
+window.onload = function() {
+  var c = document.getElementById("myCanvas");
+  var img = document.getElementById("scream");
+  c.width= img.width;
+  c.height=img.height;
+  var ctx = c.getContext("2d");
+  ctx.drawImage(img, 0, 0);
+  ctx.font = "40pt Calibri";
+ // ctx.fillText("Happy New", img.width/2, img.height*3/4);
+  }
+
+  function myFunction(x) {
+  	
+  	  var c = document.getElementById("myCanvas");
+  var img = document.getElementById("scream");
+  c.width= img.width;
+  c.height=img.height;
+  var ctx = c.getContext("2d");
+  ctx.drawImage(img, 0, 0);
+  ctx.font = "40pt Calibri";
+ctx.fillText(x, img.width/2, img.height*3/4);}
+</script>
+
+<input type="text" id="val">
+
+<button onclick="myFunction(document.getElementById('val').value)">Click me</button>
+
+</body>
+</html>

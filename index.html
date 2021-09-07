@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="icon" type="image/png" href="pics/construction.png" sizes="96x96">
+<!--	<meta property="og:title" content="tool" />
+<meta property="og:type" content="video.movie" />
+<meta property="og:url" content="file:///C:/Users/VFARIMO/Desktop/tool/index.html" />
+<meta property="og:image" content="pics/construction.png" />-->
+
+<script type="text/javascript">
+window.onload = function() {
+
+}
+</script>
+	<title>Customized Greeting Cards</title>
+	<link rel="stylesheet" type="text/css" href="bs.css">
+	<link rel="stylesheet" type="text/css" href="my.css">
+	<script src="js.js"></script>
+	<script src="jquery.js"></script>
+  <script src="bs.js"></script>
+</head>
+<body>
+	<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Page 1-1</a></li>
+            <li><a href="#">Page 1-2</a></li>
+            <li><a href="#">Page 1-3</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Page 2</a></li>
+        <li><a href="#">Page 3</a></li>
+      </ul>
+      </div>
+  </div>
+</nav>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4">
+				<br>
+				<center>
+					<select class="form-control" id="occa_select" onchange="chng_occa()">
+				        <option disabled selected hidden>Select The Occasion</option>
+				        <option value="8">Birthday</option>
+				        <option value="4">Fathers Day</option>
+				        <option value="4">Mothers Day</option>
+				        <option value="7">Anniversary</option>
+			      	</select>
+			      	<br>
+				</center>				
+			</div>
+			<div class="col-sm-4"></div>
+		</div><br>
+		<center>
+		<button class="btn btn-primary" id="img_sel" onclick="showhide()">
+			Choose your image
+		</button>
+		</center>
+			<div class="col-sm-12"><br>
+				<div class="" id="imgdiv">
+				</div>
+			</div>
+		</div>
+	
+</body>
+</html>

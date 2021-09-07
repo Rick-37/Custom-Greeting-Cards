@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <link rel="stylesheet" type="text/css" href="bs.css">
+
+<script src="js.js"></script>
+
+</head>
+<body>
+	<script type="text/javascript">
+window.onload = function() {
+var getBase=getUrlVars()["x"];
+var allVar=atob(getBase);
+var variables = allVar.split('&');
+
+	var getImg=variables[0];
+	  document.getElementById("imgSelect").innerHTML="<img src="+getImg+" id='scream' style='display:none'>";
+}
+
+	</script>
+
+<div class="col-sm-12">
+<div id="imgSelect"></div>
+<div align="center">
+<canvas id="myCanvas" style="display: none">
+Your browser does not support this tool. please use another browser.
+</canvas>
+</div>
+
+ </div>
+<script type="text/javascript">
+	function imageGenerater(){
+document.getElementById("myCanvas").style="left:0px;top:0px;";
+document.getElementById("button-dis").style="display:none";
+document.getElementById("download").style="display:block";
+
+var getBase=getUrlVars()["x"];
+var allVar=atob(getBase);
+var variables = allVar.split('&');
+
+	var getImg=variables[0];
+	  document.getElementById("imgSelect").innerHTML="<img src="+getImg+" id='scream' style='display:none'>";
+	var getSel=variables[1];
+    var getSize=variables[2];
+    var getCol=variables[3];
+    var getGreet=variables[4];
+drawFunction3(getGreet,getSel,getSize,getCol);
+console.log(allVar);
+console.log(variables[0]);
+console.log(variables[1]);
+console.log(variables[2]);
+console.log(variables[3]);
+console.log(variables[4]);
+	}
+</script>
+<center>
+<div class="col-sm-12">
+<button onclick="imageGenerater()" id="button-dis" class="btn btn-danger">click me for a Surprise!!</button>
+<a id="download" download="Download.png" style="display: none">
+<button type="button" onClick="download2()" class="btn btn-success btnSpecial">Download</button>
+</a>
+</div>
+</center>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<html>
+    <body>
+    <script language="JScript">
+   
+    function getCount(foldername)
+    {
+      var myObject, f, filesCount;
+      myObject = new ActiveXObject("Scripting.FileSystemObject");
+      f = myObject.GetFolder(foldername);
+      filesCount = f.files.Count;
+      alert("The number of files in this folder is: " + filesCount);
+    }
+    function as(){
+    	alert("asd");
+    }
+
+    </script>
+    <form name="myForm">
+    Enter the name of a folder which contains files.
+    <input type="text" size="35" name="file" id="a">
+    <br><br>
+    <input type="Button" value="Get File Count" onClick="getCount('pics')">
+    </form>
+    </body>
+    </html>

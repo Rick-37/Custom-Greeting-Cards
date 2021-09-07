@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <style type="text/css">
+    body { 
+ background-color: #efefef;   
+}
+canvas { 
+ outline: 1px solid #000;   
+ background-color: white;
+}
+  </style>
+</head>
+<body>
+<canvas id="c" width="150" height="150"></canvas>
+    <script type="text/javascript">
+    
+    var c = document.getElementById('c').getContext('2d');
+c.font = '11px Courier';
+    console.log(c);
+var txt = 'line 1\nline 2\nthird line..';
+var x = 30;
+var y = 30;
+var lineheight = 15;
+var lines = txt.split('\n');
+
+for (var i = 0; i<lines.length; i++)
+    c.fillText(lines[i], x, y + (i*lineheight) );
+
+
+</script>
+  <img src="../pics/Anniversary/1.jpg" id='scream' style='display:none'>
+<canvas id="cvs" style="width: 100%"></canvas><br />
+<input type="text" id="" />
+<textarea id="input" class="form-control" placeholder="Enter Your Greetings" rows = "5" cols = "60"></textarea><br>
+          
+<script type="text/javascript">
+  var canvas = document.getElementById('cvs'),
+    ctx = canvas.getContext('2d'),
+    input = document.getElementById('input'),
+    width = +(canvas.width = window.innerWidth),
+    height = +(canvas.height = window.innerHeight),
+    fontFamily = "Arial",
+    fontSize = "24px",
+    fontColour = "blue";
+
+  var  img = document.getElementById("scream");
+
+function draw() {
+    // ctx.save();  
+    // ctx.clearRect(0, 0, width, height);
+    // ctx.drawImage(img, 0, 0,canvas.width, canvas.height);
+
+    // ctx.font = "bold " + fontSize + " " + fontFamily;
+    // ctx.textAlign = "center";
+    // ctx.fillStyle = fontColour;
+    // var lines = fragmentText(input.value, width - parseInt(fontSize,0));
+    // lines.forEach(function(line, i) {
+    //     ctx.fillText(line, width / 2, (i + 1) * parseInt(fontSize,0)*2);
+    // });
+    // ctx.restore();
+}
+function ddraw(){  
+var c = document.getElementById('cvs').getContext('2d');
+c.font = '50px Courier';
+    console.log(c);
+var txt = document.getElementById('input').value;
+var x = 30;
+var y = 30;
+var lineheight = 35;
+var lines = txt.split('\n');
+
+for (var i = 0; i<lines.length; i++)
+    c.fillText(lines[i], canvas.width/2, y + (i*lineheight) );
+}
+input.onkeyup = function(e) { // keyup because we need to know what the entered text is.
+    draw();
+};
+</script>
+<button onclick="ddraw();">click</button>
+</body>
+</html>

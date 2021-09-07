@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="js.js"></script>
+
+  <style type="text/css">
+    option{
+        background-color:darkgrey;
+    }
+
+  </style>
+    <link rel="stylesheet" type="text/css" href="bs.css">
+    <link rel="stylesheet" type="text/css" href="my.css">
+
+  <script type="text/javascript">
+    window.onload = function() {
+     var getImg=getUrlVars()["x"];
+    document.getElementById("imgSelect").innerHTML="<img src="+getImg+" id='scream' style='display:none'>";
+    // document.getElementById("imgSelect").innerHTML="<img crossorigin='Anonymous' src="+getImg+" id='scream' style='display:none'>";
+  var c = document.getElementById("myCanvas");
+  var img = document.getElementById("scream");
+  var ctx = c.getContext("2d");
+  ctx.drawImage(img, 0, 0);
+  ctx.font = "40pt Calibri";
+ // ctx.fillText("Happy New", img.width/2, img.height*3/4);  
+  }
+
+  </script>
+
+</head>
+<body>
+<center>
+  <div style="float: center" class="col-sm-4">
+<br>
+          <select class="form-control" id="font_select" onchange="chng_attr()">
+                <option disabled selected hidden>Select Font</option>
+                <option style="font-family: fantasy">fantasy</option>
+                <option style="font-family: sans-serif">sans-serif</option>
+                <option style="font-family: serif">serif</option>
+                <option style="font-family: monospace">monospace</option>
+                <option style="font-family: cursive">cursive</option>
+                <option style="font-family: Verdana">Verdana</option>
+                <option style="font-family: Georgia">Georgia</option>
+                <option style="font-family: Garamond">Garamond</option>
+                <option style="font-family: Candara">Candara</option>
+                <option style="font-family: Arial Black">Arial Black</option>
+                <option style="font-family: Impact">Impact</option>
+              </select><br>
+          <select class="form-control" id="font_size">
+                <option disabled selected hidden>Select Font Size</option>
+                <option value="35">1</option>
+                <option value="40">2</option>
+                <option value="45">3</option>
+                <option value="50">4</option>
+                <option value="55">5</option>
+                <option value="60">6</option>
+                <option value="65">7</option>
+                <option value="70">8</option>
+                <option value="75">9</option>
+                <option value="80">10</option>
+                <option value="85">11</option>
+                <option value="90">12</option>
+                <option value="95">13</option>
+                <option value="100">14</option>
+                </select>
+              <br>
+              <select class="form-control" id="font_color" onchange="chng_attr(); drawFunction2(document.getElementById('greeting_text').value,document.getElementById('font_select').value,document.getElementById('font_size').value,document.getElementById('font_color').value)">
+                <option disabled selected hidden>Select Font Color</option>
+                <option style="color:AliceBlue">AliceBlue</option>
+                <option style="color:AntiqueWhite">AntiqueWhite</option>
+                <option style="color:Aqua">Aqua</option>
+                <option style="color:Aquamarine">Aquamarine</option>
+                <option style="color:Azure">Azure</option>
+                <option style="color:Beige">Beige</option>
+                <option style="color:Bisque">Bisque</option>
+                <option style="color:Black">Black</option>
+                <option style="color:BlanchedAlmond">BlanchedAlmond</option>
+                <option style="color:Blue">Blue</option>
+                <option style="color:BlueViolet">BlueViolet</option>
+                <option style="color:Brown">Brown</option>
+                <option style="color:BurlyWood">BurlyWood</option>
+                <option style="color:CadetBlue">CadetBlue</option>
+                <option style="color:Chartreuse">Chartreuse</option>
+                <option style="color:Chocolate">Chocolate</option>
+                <option style="color:Coral">Coral</option>
+                <option style="color:CornflowerBlue">CornflowerBlue</option>
+                <option style="color:Cornsilk">Cornsilk</option>
+                <option style="color:Crimson">Crimson</option>
+                <option style="color:Cyan">Cyan</option>
+                <option style="color:DarkBlue">DarkBlue</option>
+                <option style="color:DarkCyan">DarkCyan</option>
+                <option style="color:DarkGoldenRod">DarkGoldenRod</option>
+                <option style="color:DarkGray">DarkGray</option>
+                <option style="color:DarkGreen">DarkGreen</option>
+                <option style="color:DarkKhaki">DarkKhaki</option>
+                <option style="color:DarkMagenta">DarkMagenta</option>
+                <option style="color:DarkOliveGreen">DarkOliveGreen</option>
+                <option style="color:DarkOrange">DarkOrange</option>
+                <option style="color:DarkOrchid">DarkOrchid</option>
+                <option style="color:DarkRed">DarkRed</option>
+                <option style="color:DarkSalmon">DarkSalmon</option>
+                <option style="color:DarkSeaGreen">DarkSeaGreen</option>
+                <option style="color:DarkSlateBlue">DarkSlateBlue</option>
+                <option style="color:DarkSlateGrey">DarkSlateGrey</option>
+                <option style="color:DarkTurquoise">DarkTurquoise</option>
+                <option style="color:DarkViolet">DarkViolet</option>
+                <option style="color:DeepPink">DeepPink</option>
+                <option style="color:DeepSkyBlue">DeepSkyBlue</option>
+                <option style="color:DimGrey">DimGrey</option>
+                <option style="color:DodgerBlue">DodgerBlue</option>
+                <option style="color:FireBrick">FireBrick</option>
+                <option style="color:FloralWhite">FloralWhite</option>
+                <option style="color:ForestGreen">ForestGreen</option>
+                <option style="color:Fuchsia">Fuchsia</option>
+                <option style="color:Gainsboro">Gainsboro</option>
+                <option style="color:GhostWhite">GhostWhite</option>
+                <option style="color:Gold">Gold</option>
+                <option style="color:GoldenRod">GoldenRod</option>
+                <option style="color:Grey">Grey</option>
+                <option style="color:Green">Green</option>
+                <option style="color:GreenYellow">GreenYellow</option>
+                <option style="color:HoneyDew">HoneyDew</option>
+                <option style="color:HotPink">HotPink</option>
+                <option style="color:IndianRed">IndianRed</option>
+                <option style="color:Indigo">Indigo</option>
+                <option style="color:Ivory">Ivory</option>
+                <option style="color:Khaki">Khaki</option>
+                <option style="color:Lavender">Lavender</option>
+                <option style="color:LavenderBlush">LavenderBlush</option>
+                <option style="color:LawnGreen">LawnGreen</option>
+                <option style="color:LemonChiffon">LemonChiffon</option>
+                <option style="color:LightBlue">LightBlue</option>
+                <option style="color:LightCoral">LightCoral</option>
+                <option style="color:LightCyan">LightCyan</option>
+                <option style="color:LightGoldenRodYellow">LightGoldenRodYellow</option>
+                <option style="color:LightGrey">LightGrey</option>
+                <option style="color:LightGreen">LightGreen</option>
+                <option style="color:LightPink">LightPink</option>
+                <option style="color:LightSalmon">LightSalmon</option>
+                <option style="color:LightSeaGreen">LightSeaGreen</option>
+                <option style="color:LightSkyBlue">LightSkyBlue</option>
+                <option style="color:LightSlateGrey">LightSlateGrey</option>
+                <option style="color:LightSteelBlue">LightSteelBlue</option>
+                <option style="color:LightYellow">LightYellow</option>
+                <option style="color:Lime">Lime</option>
+                <option style="color:LimeGreen">LimeGreen</option>
+                <option style="color:Linen">Linen</option>
+                <option style="color:Magenta">Magenta</option>
+                <option style="color:Maroon">Maroon</option>
+                <option style="color:MediumAquaMarine">MediumAquaMarine</option>
+                <option style="color:MediumBlue">MediumBlue</option>
+                <option style="color:MediumOrchid">MediumOrchid</option>
+                <option style="color:MediumPurple">MediumPurple</option>
+                <option style="color:MediumSeaGreen">MediumSeaGreen</option>
+                <option style="color:MediumSlateBlue">MediumSlateBlue</option>
+                <option style="color:MediumSpringGreen">MediumSpringGreen</option>
+                <option style="color:MediumTurquoise">MediumTurquoise</option>
+                <option style="color:MediumVioletRed">MediumVioletRed</option>
+                <option style="color:MidnightBlue">MidnightBlue</option>
+                <option style="color:MintCream">MintCream</option>
+                <option style="color:MistyRose">MistyRose</option>
+                <option style="color:Moccasin">Moccasin</option>
+                <option style="color:NavajoWhite">NavajoWhite</option>
+                <option style="color:Navy">Navy</option>
+                <option style="color:OldLace">OldLace</option>
+                <option style="color:Olive">Olive</option>
+                <option style="color:OliveDrab">OliveDrab</option>
+                <option style="color:Orange">Orange</option>
+                <option style="color:OrangeRed">OrangeRed</option>
+                <option style="color:Orchid">Orchid</option>
+                <option style="color:PaleGoldenRod">PaleGoldenRod</option>
+                <option style="color:PaleGreen">PaleGreen</option>
+                <option style="color:PaleTurquoise">PaleTurquoise</option>
+                <option style="color:PaleVioletRed">PaleVioletRed</option>
+                <option style="color:PapayaWhip">PapayaWhip</option>
+                <option style="color:PeachPuff">PeachPuff</option>
+                <option style="color:Peru">Peru</option>
+                <option style="color:Pink">Pink</option>
+                <option style="color:Plum">Plum</option>
+                <option style="color:PowderBlue">PowderBlue</option>
+                <option style="color:Purple">Purple</option>
+                <option style="color:RebeccaPurple">RebeccaPurple</option>
+                <option style="color:Red">Red</option>
+                <option style="color:RosyBrown">RosyBrown</option>
+                <option style="color:RoyalBlue">RoyalBlue</option>
+                <option style="color:SaddleBrown">SaddleBrown</option>
+                <option style="color:Salmon">Salmon</option>
+                <option style="color:SandyBrown">SandyBrown</option>
+                <option style="color:SeaGreen">SeaGreen</option>
+                <option style="color:SeaShell">SeaShell</option>
+                <option style="color:Sienna">Sienna</option>
+                <option style="color:Silver">Silver</option>
+                <option style="color:SkyBlue">SkyBlue</option>
+                <option style="color:SlateBlue">SlateBlue</option>
+                <option style="color:SlateGrey">SlateGrey</option>
+                <option style="color:Snow">Snow</option>
+                <option style="color:SpringGreen">SpringGreen</option>
+                <option style="color:SteelBlue">SteelBlue</option>
+                <option style="color:Tan">Tan</option>
+                <option style="color:Teal">Teal</option>
+                <option style="color:Thistle">Thistle</option>
+                <option style="color:Tomato">Tomato</option>
+                <option style="color:Turquoise">Turquoise</option>
+                <option style="color:Violet">Violet</option>
+                <option style="color:Wheat">Wheat</option>
+                <option style="color:White">White</option>
+                <option style="color:WhiteSmoke">WhiteSmoke</option>
+                <option style="color:Yellow">Yellow</option>
+                <option style="color:YellowGreen">YellowGreen</option>
+              </select>
+              <br>
+   <textarea id="greeting_text" class="form-control" placeholder="Select your Font and Font Size and Enter Your Greetings" rows = "5" cols = "60" onkeyup="drawFunction2(document.getElementById('greeting_text').value,document.getElementById('font_select').value,document.getElementById('font_size').value,document.getElementById('font_color').value)"></textarea><br>       
+          <!--<button onclick="drawFunction2(document.getElementById('greeting_text').value,document.getElementById('font_select').value,document.getElementById('font_size').value)" class="btn btn-primary">Click me</button>
+-->
+<button type="button" onClick="link(getUrlVars()['x'])" class="btn btn-danger">Share the image using a link</button>
+      <a id="download" download="Download.png">
+<button type="button" onClick="download()" class="btn btn-success">Download</button>
+</a>
+<!--imgdiv in the below code is for the showhide function-->
+<div id="imgdiv" class=""><br>
+<input type="text" name="" class="form-control" id="linkVal" readonly="readonly"><br>
+<button onclick="copy()" class="btn btn-info">Copy text</button>
+</div>
+</div>
+
+<div class="col-sm-8">
+<div id="imgSelect" style="display: none"></div>
+<div align="center">
+<canvas id="myCanvas" style="border:1px solid #d3d3d3;width: 100%">
+Your browser does not support this tool. please use another browser.
+</canvas>
+</div>
+</div>
+
+</center>
+</body>
+</html>

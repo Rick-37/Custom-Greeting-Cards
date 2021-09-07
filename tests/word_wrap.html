@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Image to use:</p>
+<img id="scream" src="a.jpg" alt="The Scream" style="">
+<canvas id="myCanvas" width="578" height="200"></canvas>
+<script type="text/javascript">
+// from https://www.html5canvastutorials.com/tutorials/html5-canvas-wrap-text-tutorial/
+
+window.document.addEventListener('DOMContentLoaded', function(e) {
+  
+  function wrapText(context, text, x, y, maxWidth, lineHeight) {
+        var words = text.split(' ');
+        var line = '';
+
+        for(var n = 0; n < words.length; n++) {
+          var testLine = line + words[n] + ' ';
+          var metrics = context.measureText(testLine);
+          var testWidth = metrics.width;
+          if (testWidth > maxWidth && n > 0) {
+            context.fillText(line, x, y);
+            line = words[n] + ' ';
+            y += lineHeight;
+          }
+          else {
+            line = testLine;
+          }
+        }
+        context.fillText(line, x, y);
+      }
+      
+      var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+      var maxWidth = 400;
+      var lineHeight = 24;
+      var x = (canvas.width - maxWidth) / 2;
+      var y = 60;
+      var text = 'All the world\'s a stage, and all the men and women merely players. They have their exits and their entrances; And one man in his time plays many parts.';
+
+      context.font = '15pt Calibri';
+      context.fillStyle = '#333';
+
+      wrapText(context, text, x, y, maxWidth, lineHeight);
+  
+});
+</script>
+
+</body>
+</html>
